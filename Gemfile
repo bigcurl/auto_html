@@ -13,6 +13,7 @@ else
   "~> #{rails_version}"
 end
 
-gem "rails", rails 
+gem "rails", rails
 gem 'sqlite3', '~> 1.3.3'
 gem 'fakeweb'
+gem 'addressable', :require => 'addressable/uri'
