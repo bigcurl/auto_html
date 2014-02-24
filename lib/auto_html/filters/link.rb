@@ -9,14 +9,13 @@ AutoHtml.add_filter(:link).with({}) do |text, options|
   Rinku.auto_link(text, :all, attributes) do |url|
     if option_short_link_name
       begin
-        url = Addressable::URI.heuristic_parse(url).normalize
-        uri = URI.parse(URI.encode(url.to_s.strip))
+        url_parsed = Addressable::URI.heuristic_parse(url).normalize
+        uri = URI.parse(URI.encode(url_parsed.to_s.strip))
+        uri.query = nil
+        uri.to_s
       rescue
-        return url
+        url
       end
-
-      uri.query = nil
-      uri.to_s
     else
       url
     end
