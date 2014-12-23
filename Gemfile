@@ -17,4 +17,4 @@ gem "rails", rails
 gem 'sqlite3', '~> 1.3.3'
 gem 'fakeweb'
 gem 'addressable', :require => 'addressable/uri'
-gem 'rails-html-sanitizer'
+gem 'rails-deprecated_sanitizer'
