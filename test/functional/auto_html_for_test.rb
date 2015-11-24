@@ -9,9 +9,14 @@ class Article < ActiveRecord::Base
     link(:target => "_blank")
     simple_format
   end
+
+  alias_attribute :plain_body, :body
+  auto_html_for :plain_body do
+    html_escape
+  end
 end
 
-class AutoHtmlForTest < Test::Unit::TestCase
+class AutoHtmlForTest < Minitest::Test
   include FixtureSetup
 
   def test_transform_on_initialization
@@ -42,5 +47,10 @@ class AutoHtmlForTest < Test::Unit::TestCase
     @article.update_attributes(:body => 'http://vukajlija.com')
     @article.save!
     assert_equal '<p><a href="http://vukajlija.com" target="_blank">http://vukajlija.com</a></p>', @article.body_html
+  end
+
+  def test_transform_of_alias_attribute
+    @article = Article.new(:body => 'Hello there.')
+    assert_equal 'Hello there.', @article.plain_body_html
   end
 end
