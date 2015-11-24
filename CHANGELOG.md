@@ -1,3 +1,31 @@
+## 1.6.4, released 2014-04-11
+* New filter: youtube image filter 
+
+## 1.6.3, released 2014-04-01
+* Fixed Twitter filter
+* New filter: liveleak
+
+## 1.6.2, released 2014-03-15
+* Deferred loading of filters dependencies when possible
+* Wrap youtube video with div for easier styling
+* Update redcarpet to latest
+* New filter: instagram 
+* Small fix for hashtag filter
+* Allow replacing youtube URL without protocol
+* Fix gist filter - add type attribute
+
+## 1.6.1, released 2014-01-05
+* Permit auto_html_for on an attribute that's not in the DB.
+* Image filter: :proxy option, do not format existing <img> 
+* Link filter: :short_link_name option
+* GoogleMap filter: support for all countries (domains)
+* Gist filter: support for new URL scheme
+* Soundcloud: does not use network call anymore
+* GoogleMap: add :zoom, :show_info, :type and :more param
+* YouTube: add :autoplay option
+* New filters: worldstar
+* Deprecate GoogleVideo since it is discontinued
+
 ## 1.6.0, released 2012-07-28 
 * Twitter, Flickr, Soundcloud filters added
 * Options for markdown filter added
